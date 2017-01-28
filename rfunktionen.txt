@@ -1,0 +1,23 @@
+Vorschlag zur Implementierung der R-Funktionen
+--
+
+Die Implementierung der R-Funktionen sollte sinnvoll auf zwei Packages
+aufgesplittet werden:
+- functions
+- decomp
+
+Im Package function sollten die R-Funktionen festintegriert, auf Basis der
+existierenden Vorlagenklassen FBase bzw. FCADBase, werden. Die Wahl der
+Basisklasse muss abhängen von den Differenzierungseigenschaften des
+verwendeten R-Funktionen Branch. Hier ist zu überprüfen inwiefern eine
+Implementierung mit FCADBase möglich ist bzw. inwiefern Probleme mit fadbad
+auftreten. 
+Vermutlich muss entweder eine eigene manuelle Implementierung her oder das
+Interface i(c)function.hpp entsprechend um die fadbad-Vektorklassen erweitert
+werden. Hier sollte geprüft werden inwiefern diese Klassen mit Makros
+generiert werden können.
+
+Im Package decomp selbst werden die eigentlichen CSG-Operationen
+definiert. Diese sollen parametriersierbar sein (template?) mit einer
+zugrundeliegenden R-Funktion. Über diese R-Funktion selbst wird dann die
+charakteristische Funktion des CSG Knotens definiert.

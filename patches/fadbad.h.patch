@@ -1,0 +1,11 @@
+--- /home/fluxy/libs/fadbad/fadbad.h	2007-11-01 22:11:42.000000000 +0100
++++ fadbad.h.~master~	2016-07-23 21:52:07.273551120 +0200
+@@ -147,7 +147,7 @@
+ #define USER_ASSERT(check,msg)
+ #define INTERNAL_ASSERT(check,msg)
+ #define ASSERT(check)
+-#define DEBUG(code)
++//#define DEBUG(code)
+ 
+ #endif
+ 

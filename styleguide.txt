@@ -1,0 +1,21 @@
+Styleguide
+--
+
+namespaces: klein
+
+Klassennamen: groß, mixed-case (Bsp.: FunctionParser)
+
+Interface: I als prefix, grundsätzlich nicht kopier- oder zuweisbar,
+Konstruktor protected, abstrakte Klasse, Verwendung der forward idioms (nicht
+virtual Funktionen definieren public interface und leiten inline weiter auf
+virtual private Funktionen die nicht implementiert sind), im allgemeinen
+sollte eine clone() Funktion als Ersatz für den Kopierkonstruktur zur
+Verfügung gestellt werden
+
+Funktionsnamen: klein, kein mixed-case (Bsp.: simplify oder unit_box)
+
+Variablennamen: klein, kein mixed-case (mit Ausnahmen, z.B X für aktuelle Box
+für annäherung an mathematische Definition)
+
+Member: mit prefix m_ (Bsp.: m_dim, hier Ausnahmen für besondere Variablen:
+z.B. m_F für eine Funktion)

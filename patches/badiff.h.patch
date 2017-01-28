@@ -1,0 +1,37 @@
+--- /home/fluxy/libs/fadbad/badiff.h	2007-11-01 22:11:42.000000000 +0100
++++ badiff.h.~master~	2016-07-23 21:53:55.534170117 +0200
+@@ -288,6 +288,7 @@
+ 	} m_sv;
+ public:
+ 	typedef U UnderlyingType;
++	typedef U value_type;
+ 	BTypeName():m_sv(new BTypeNameHV<U>()){}
+ 	BTypeName(BTypeNameHV<U>* pBTypeNameHV):m_sv(pBTypeNameHV){}
+ 	explicit BTypeName(const typename BTypeName<U>::SV& sv):m_sv(sv){}
+@@ -582,7 +583,7 @@
+ 	BTypeNameMUL1(const U& val, const V& a, BTypeNameHV<U>* pOp2):UnBTypeNameHV<U>(val,pOp2),m_a(a){}
+ 	virtual void propagate(typename Derivatives<U>::RecycleBin& bin)
+ 	{
+-		this->op()->add(bin,m_a,this->m_derivatives);
++	  this->op()->add(bin, U(m_a),this->m_derivatives);
+ 	}
+ private:
+ 	void operator=(const BTypeNameMUL1<U,V>&){} // not allowed
+@@ -594,7 +595,7 @@
+ 	BTypeNameMUL2(const U& val, BTypeNameHV<U>* pOp1, const V& b):UnBTypeNameHV<U>(val,pOp1),m_b(b){}
+ 	virtual void propagate(typename Derivatives<U>::RecycleBin& bin)
+ 	{
+-		this->op()->add(bin,m_b,this->m_derivatives);
++	  this->op()->add(bin, U(m_b), this->m_derivatives);
+ 	}
+ private:
+ 	void operator=(const BTypeNameMUL2<U,V>&){} // not allowed
+@@ -683,7 +684,7 @@
+ 	BTypeNameDIV2(const U& val, BTypeNameHV<U>* pOp1, const V& b):UnBTypeNameHV<U>(val,pOp1),m_b(b){}
+ 	virtual void propagate(typename Derivatives<U>::RecycleBin& bin)
+ 	{
+-		this->op()->add(bin,Op<V>::myInv(m_b),this->m_derivatives);
++	  this->op()->add(bin,U(Op<V>::myInv(m_b)),this->m_derivatives);
+ 	}
+ private:
+ 	void operator=(const BTypeNameDIV2<U,V>&){} // not allowed

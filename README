@@ -1,0 +1,24 @@
+UNIfied DIstance FrameWOrK
+--
+
+Installation
+--
+Siehe Installation.txt bzw. Installation_alt.pdf
+
+Aufbau
+--
+core - Kernkomponente (einheitliche Arithmetikinterfaces, utility Klassen, Traits für Arithmetiken, Matrizen)
+functions - Interface für Funktionen (IFunction, ICFunction), Parser, Basisklassen für die Konstruktion von Funktionen über Funktoren FCADBase, FBase, ...)
+objects - Operationen für das Zusammenfügen von Funktionen zu größeren Teilen, einheitliches geometrisches Interface, einlesen von anderen Beschreibungsformen
+decomp - Hierarchische Zerlegungsstrategien -> IV-BinTree, AAF-Bintree, LIETree, ...
+algorithms - High Level Algorithmen
+	  /opt-lib - Verifiziertes globales Optimierungsverfahren
+
+Debugging
+--
+Um das Debugging zu vereinfachen kann das neue gdb-Python Scripting verwendet werden.
+Unterstützt der gdb Pythonscriping, so wird die Datei unidiwok-gdb automatisch geladen beim Debuggen
+Diese registriert passende pretty Printer für einige Datenstrukturen des unidiwok Frameworks
+Es sollten weiterhin die pretty-printer für die STL installiert (Projekt archer)
+
+

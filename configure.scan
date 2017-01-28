@@ -1,0 +1,67 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.65])
+AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_CONFIG_SRCDIR([config.h.in])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_RANLIB
+
+# Checks for libraries.
+# FIXME: Replace `main' with a function in `-lGL':
+AC_CHECK_LIB([GL], [main])
+# FIXME: Replace `main' with a function in `-lGLU':
+AC_CHECK_LIB([GLU], [main])
+# FIXME: Replace `main' with a function in `-lOpenMeshCore':
+AC_CHECK_LIB([OpenMeshCore], [main])
+# FIXME: Replace `main' with a function in `-lQtCore':
+AC_CHECK_LIB([QtCore], [main])
+# FIXME: Replace `main' with a function in `-lQtGui':
+AC_CHECK_LIB([QtGui], [main])
+# FIXME: Replace `main' with a function in `-lQtOpenGL':
+AC_CHECK_LIB([QtOpenGL], [main])
+# FIXME: Replace `main' with a function in `-lQtXml':
+AC_CHECK_LIB([QtXml], [main])
+# FIXME: Replace `main' with a function in `-laffa':
+AC_CHECK_LIB([affa], [main])
+# FIXME: Replace `main' with a function in `-lblas':
+AC_CHECK_LIB([blas], [main])
+# FIXME: Replace `main' with a function in `-lcxsc':
+AC_CHECK_LIB([cxsc], [main])
+# FIXME: Replace `main' with a function in `-lgfortran':
+AC_CHECK_LIB([gfortran], [main])
+# FIXME: Replace `main' with a function in `-lipopt':
+AC_CHECK_LIB([ipopt], [main])
+# FIXME: Replace `main' with a function in `-llapack':
+AC_CHECK_LIB([lapack], [main])
+# FIXME: Replace `main' with a function in `-lm':
+AC_CHECK_LIB([m], [main])
+# FIXME: Replace `main' with a function in `-lpthread':
+AC_CHECK_LIB([pthread], [main])
+# FIXME: Replace `main' with a function in `-ltm':
+AC_CHECK_LIB([tm], [main])
+
+# Checks for header files.
+AC_CHECK_HEADERS([fenv.h float.h sys/time.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_HEADER_STDBOOL
+AC_C_INLINE
+AC_TYPE_SIZE_T
+
+# Checks for library functions.
+AC_CHECK_FUNCS([fesetround gettimeofday pow select sqrt strchr])
+
+AC_CONFIG_FILES([Makefile
+                 src/Makefile
+                 src/algorithm/opt-lib/Makefile
+                 src/decomp/Makefile
+                 src/functions/Makefile])
+AC_OUTPUT

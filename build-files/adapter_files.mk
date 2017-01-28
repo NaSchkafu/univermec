@@ -1,0 +1,2 @@
+ADAPTERS=$(top_builddir)/src/core/arithtraits.m4 $(top_builddir)/src/core/fadbadadapt.m4 $(top_builddir)/src/core/adapters/doubleadapt.m4 src/core/adapters/adapters.m4 $(top_builddir)/src/core/adapters/basetemplate.m4 $(top_builddir)/src/core/adapters/baseadapter.m4 $(top_builddir)/src/core/adapters/yalaaadapt.m4 $(top_builddir)/src/core/adapters/cxscadapt.m4 $(top_builddir)/src/core/adapters/riotadapt.m4 $(top_builddir)/src/core/adapters/cosyadapt.m4 $(top_builddir)/src/core/adapters/profiladapt.m4
+
