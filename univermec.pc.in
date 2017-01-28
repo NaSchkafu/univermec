@@ -1,0 +1,14 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+includedir=@prefix@/inc
+additional_includedirs=@BOOST_CPPFLAGS@ @IV_CPPFLAGS@ @MTL_CPPFLAGS@ @FADBAD_CPPFLAGS@ @OPENMESH_CPPFLAGS@ @TM_CPPFLAGS@ @AA_CPPFLAGS_S@
+core_libs=@IV_LIBS@ @TM_LIBS@ @OPENMESH_LIBS@ @BOOST_TIMER_LIBS@ @BOOST_SYSTEM_LIBS@ @AA_LIBS_S@ @BOOST_THREAD_LIBS@  -lgomp
+core_flags=@AA_LDFLAGS_S@ @OPENMESH_LDFLAGS@ @BOOST_TIMER_LDFLAGS@ @BOOST_SYSTEM_LDFLAGS@ @BOOST_THREAD_LDFLAGS@ @IV_LDFLAGS@
+vnode_flags=@VNODELP_LDFLAGS@
+vnode_libs=@VNODELP_LIBS@
+
+Name: univermec
+Description: Unified Framework for VERfied Computations
+Version: 0.1
+Cflags: ${additional_includedirs} -I${includedir} -I${includedir}/.autogen
+Libs: ${core_flags} ${core_libs} -L${prefix}/lib -lunivermec -lvnodewrapper ${vnode_flags} ${vnode_libs}
